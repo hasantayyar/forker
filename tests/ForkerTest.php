@@ -1,7 +1,7 @@
 <?php
 
-require("Forker.php");
-
+require(__DIR__."/../vendor/autoload.php");
+$a = new Forker();
 /**
  * Designed to work with PHPUnit
  */

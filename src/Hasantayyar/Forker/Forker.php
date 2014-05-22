@@ -1,4 +1,5 @@
 <?php
+namespace Hasantayyar\Forker;
 
 /**
  * A simple interfacing for forking and returning information from N workers.
