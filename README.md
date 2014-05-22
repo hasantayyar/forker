@@ -4,12 +4,31 @@ Forker
 
 Forker presents a simple interfacing for forking in PHP.
 
-If you need to do several tasks in parallel and collect their results,
-this is about as simple as it gets.
+## Install
 
-    $things = array($thing1, $thing2);
-    $results = Forker::map($things, function ($index, $thing) {
-       // Some expensive operation
-       return calculateNewThing($thing);
-    });
+    composer require hasantayyar/forker:dev-master
 
+## Getting Started
+
+    <?php
+    use Hasantayyar\Forker\Forker;
+    $servers = array('machine1.example.com', 'machine2.example.com');
+    
+    /**
+     * Run a shell command on an array of servers using SSH,
+     * returning the output and exit code.
+     */
+    function runCmd($command, $servers) {
+        return Forker::map($servers,
+        function($index, $server) use ($command) {
+            $sshCommand = "ssh $server -c '$command' 2>&1";
+            exec($sshCommand, $exitCode, $output);
+            return array(
+                'output' => implode("\n", $output),
+                'exitCode' => $exitCode
+            );
+        });
+    }
+    
+    $results = runCmd("hostname", $servers);
+    print_r($results);
