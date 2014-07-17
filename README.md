@@ -4,6 +4,10 @@ Forker
 
 Forker presents a simple interfacing for forking in PHP.
 
+##What is different in this fork
+All same but this fork packed for composer.
+
+
 ## Install
 
     composer require hasantayyar/forker:dev-master
