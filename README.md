@@ -2,6 +2,7 @@ Forker
 ------
 [![Build Status](https://secure.travis-ci.org/hasantayyar/forker.png?branch=master)](http://travis-ci.org/hasantayyar/forker)
 
+
 Forker presents a simple interfacing for forking in PHP.
 
 ##What is different in this fork
@@ -36,3 +37,7 @@ All same but this fork packed for composer.
     
     $results = runCmd("hostname", $servers);
     print_r($results);
+    
+    
+
+[![Circle CI](https://circleci.com/gh/hasantayyar/forker.png?style=badge)](https://circleci.com/gh/hasantayyar/forker)
